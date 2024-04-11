@@ -15,4 +15,5 @@ public class UserProfile
     public string Email { get; set; }
     public string? IdentityUserId { get; set; }
     public IdentityUser? IdentityUser { get; set; }
+     public List<Saving> Savings { get; set; }
 }
