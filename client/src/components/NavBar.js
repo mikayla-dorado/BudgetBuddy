@@ -23,7 +23,7 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
         <div>
             <Navbar className="navbar"  light fixed="true" expand="lg">
                 <NavbarBrand className="mr-auto" tag={RRNavLink} to="/">
-                    Budget Buddy
+                    Chore Chart
                 </NavbarBrand>
                 {loggedInUser ? (
                     <>

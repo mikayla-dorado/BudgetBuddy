@@ -4,6 +4,7 @@ using BudgetBuddy.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Components.Routing;
 using Npgsql;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace BudgetBuddy.Data;
 public class BudgetBuddyDbContext : IdentityDbContext<IdentityUser>
@@ -13,9 +14,8 @@ public class BudgetBuddyDbContext : IdentityDbContext<IdentityUser>
     public DbSet<Saving> Savings { get; set; }
     public DbSet<Debt> Debts { get; set; }
     public DbSet<Paycheck> Paychecks { get; set; }
-    public DbSet<Budget> Budgets { get; set; }
     public DbSet<Notification> Notifications { get; set; }
-    public DbSet<Bill> Bills { get; set; } 
+    public DbSet<BudgetItem> BudgetItems { get; set; } 
 
 
     public BudgetBuddyDbContext(DbContextOptions<BudgetBuddyDbContext> context, IConfiguration config) : base(context)
@@ -76,21 +76,13 @@ public class BudgetBuddyDbContext : IdentityDbContext<IdentityUser>
             new Paycheck {Id = 3, Amount = 1200.00M, Date = new DateTime(2024, 04, 21), UserProfileId = 1},
             new Paycheck {Id = 4, Amount = 1200.00M, Date = new DateTime(2024, 04, 28), UserProfileId = 1}
         });
-          modelBuilder.Entity<Budget>().HasData(new Budget[]
-        {
-            new Budget {Id = 1, PlannedSpending = 50.00M, ActualSpending = 45.00M, RemainingBalance = 5.00M, UserProfileId = 1}
-        });
          modelBuilder.Entity<Notification>().HasData(new Notification[]
         {
-            new Notification {Id = 1, BillId = 1, NotificationDate = new DateTime(2024, 5, 23), IsSent = false, UserProfileId = 1}
+            new Notification {Id = 1, BudgetItemId = 1, NotificationDate = new DateTime(2024, 5, 23), IsSent = false, UserProfileId = 1}
         });
-         modelBuilder.Entity<Bill>().HasData(new Bill[]
+         modelBuilder.Entity<BudgetItem>().HasData(new BudgetItem[]
         {
-            new Bill {Id = 1, Name = "Water", Amount = 50.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
-            new Bill {Id = 2, Name = "Electric", Amount = 80.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
-            new Bill {Id = 3, Name = "Spotify", Amount = 14.99M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
-            new Bill {Id = 4, Name = "Phone", Amount = 150.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
-            new Bill {Id = 1, Name = "Water", Amount = 50.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1}
+            new BudgetItem {Id = 1, Name = "Groceries", PlannedSpending = 50.00M, ActualSpending = 45.00M, RemainingBalance = 5.00M, DueDate = new DateTime(2024, 05, 06), UserProfileId = 1}
         });
     }
 }
