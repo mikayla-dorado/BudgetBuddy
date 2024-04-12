@@ -58,15 +58,23 @@ public class BudgetBuddyDbContext : IdentityDbContext<IdentityUser>
         });
         modelBuilder.Entity<Saving>().HasData(new Saving[]
         {
-            new Saving {Id = 1, Name = "Christmas", Amount = 100.00M, Date = new DateTime(2024, 4, 15), UserProfileId = 1}
+            new Saving {Id = 1, Name = "Christmas", Amount = 100.00M, Date = new DateTime(2024, 4, 15), UserProfileId = 1},
+            new Saving {Id = 2, Name = "Vacation", Amount = 100.00M, Date = new DateTime(2024, 4, 15), UserProfileId = 1},
+            new Saving {Id = 3, Name = "Emergency", Amount = 100.00M, Date = new DateTime(2024, 4, 15), UserProfileId = 1},
+            new Saving {Id = 4, Name = "Wedding", Amount = 100.00M, Date = new DateTime(2024, 4, 15), UserProfileId = 1}
         });
         modelBuilder.Entity<Debt>().HasData(new Debt[]
         {
-            new Debt {Id = 1, Name = "School", Amount = 250.00M, DueDate = new DateTime(2024, 4, 24), UserProfileId = 1}
+            new Debt {Id = 1, Name = "School", Amount = 250.00M, DueDate = new DateTime(2024, 4, 24), UserProfileId = 1},
+            new Debt {Id = 2, Name = "Car", Amount = 150.00M, DueDate = new DateTime(2024, 4, 24), UserProfileId = 1},
+            new Debt {Id = 3, Name = "Mortgage", Amount = 1500.00M, DueDate = new DateTime(2024, 4, 20), UserProfileId = 1},
         });
         modelBuilder.Entity<Paycheck>().HasData(new Paycheck[]
         {
-            new Paycheck {Id = 1, Amount = 1200.00M, Date = new DateTime(2024, 04, 08), UserProfileId = 1}
+            new Paycheck {Id = 1, Amount = 1200.00M, Date = new DateTime(2024, 04, 07), UserProfileId = 1},
+            new Paycheck {Id = 2, Amount = 1200.00M, Date = new DateTime(2024, 04, 14), UserProfileId = 1},
+            new Paycheck {Id = 3, Amount = 1200.00M, Date = new DateTime(2024, 04, 21), UserProfileId = 1},
+            new Paycheck {Id = 4, Amount = 1200.00M, Date = new DateTime(2024, 04, 28), UserProfileId = 1}
         });
           modelBuilder.Entity<Budget>().HasData(new Budget[]
         {
@@ -78,6 +86,10 @@ public class BudgetBuddyDbContext : IdentityDbContext<IdentityUser>
         });
          modelBuilder.Entity<Bill>().HasData(new Bill[]
         {
+            new Bill {Id = 1, Name = "Water", Amount = 50.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
+            new Bill {Id = 2, Name = "Electric", Amount = 80.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
+            new Bill {Id = 3, Name = "Spotify", Amount = 14.99M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
+            new Bill {Id = 4, Name = "Phone", Amount = 150.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1},
             new Bill {Id = 1, Name = "Water", Amount = 50.00M, DueDate = new DateTime(2024, 5, 14), IsPaid = false, UserProfileId = 1}
         });
     }
