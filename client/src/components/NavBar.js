@@ -23,7 +23,7 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
         <div>
             <Navbar className="navbar"  light fixed="true" expand="lg">
                 <NavbarBrand className="mr-auto" tag={RRNavLink} to="/">
-                    Chore Chart
+                    Budget Buddy
                 </NavbarBrand>
                 {loggedInUser ? (
                     <>
@@ -33,15 +33,14 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
                             <Nav navbar>
                                 <NavItem onClick={() => setOpen(false)}>
                                     
-                                        <NavLink tag={RRNavLink} to="/userprofiles">
-                                            Users
+                                        <NavLink tag={RRNavLink} to="/savings">
+                                            Savings
                                         </NavLink>
                                        
-                                   
                                 </NavItem>
                                 <NavItem onClick={() => setOpen(false)}>
-                                        <NavLink tag={RRNavLink} to="/chores">
-                                            Chores
+                                        <NavLink tag={RRNavLink} to="/debts">
+                                            Debts
                                         </NavLink>
                                 </NavItem>
                             </Nav>
