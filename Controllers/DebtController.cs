@@ -39,15 +39,13 @@ public class DebtController : ControllerBase
 
     //add/post debt
     [HttpPost]
-    //[Authorize]
+    [Authorize]
     public IActionResult PostDebt(Debt debt)
     {
         _dbContext.Debts.Add(debt);
         _dbContext.SaveChanges();
         return Created($"/debts/{debt.Id}", debt);
     }
-
-
 
 
 }

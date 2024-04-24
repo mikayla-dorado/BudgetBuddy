@@ -5,8 +5,8 @@ export const getDebts = () => {
 }
 
 //not sure if this format is correct
-export const addDebt = (debtId, debt) => {
-    return fetch(`${_apiUrl}/${debtId}`, {
+export const addDebt = (debt) => {
+    return fetch(`${_apiUrl}/debts`, {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -14,3 +14,4 @@ export const addDebt = (debtId, debt) => {
         body: JSON.stringify(debt)
     })
 }
+//not working in postman
