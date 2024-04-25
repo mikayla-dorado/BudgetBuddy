@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.debt-container {
+.saving-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@
 
 }
 
-.debt-item {
+.saving-item {
     display: flex;
     justify-content: space-between;
     width: 100%;

@@ -4,6 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import { Home } from "./Home"
 import { DebtList } from "./debt/DebtList";
+import { SavingList } from "./saving/SavingList";
 
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
@@ -27,7 +28,14 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
             </AuthorizedRoute>}
           />
         </Route>
+        <Route path="savings">
 
+<Route index
+  element={<AuthorizedRoute loggedInUser={loggedInUser}>
+    <SavingList loggedInUser={loggedInUser} />
+  </AuthorizedRoute>}
+/>
+</Route>
 
         <Route
           path="login"

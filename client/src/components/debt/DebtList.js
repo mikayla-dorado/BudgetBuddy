@@ -2,55 +2,6 @@
 //get all debts, then display debts as an input field for users to name their debt, the date it's due, and the amount due
 //need to display all debts the user has listed, while allowing them to add more and edit existing
 
-// import { useEffect, useState } from "react"
-// import { useNavigate } from "react-router-dom"
-// import { getDebts } from "../../managers/debtManager";
-// import "./Debt.css"
-
-// export const DebtList = ({ loggedInUser }) => {
-//     const [debts, setDebts] = useState([]);
-//     const [name, setName] = useState("")
-//     const [amount, setAmount] = useState("")
-//     const [userProfile, setUserProfile] = useState([])
-//     const [dueDate, setDueDate] = useState("")
-
-//     const navigate = useNavigate();
-
-//     const getAndSetDebts = () => {
-//         getDebts().then((array) => setDebts(array))
-//     }
-
-//     useEffect(() => {
-//         getAndSetDebts()
-//     }, [])
-
-
-//     return (
-//         <div className="debt-list">
-//             <h1 className="header">Debts</h1>
-//             <div className="debt-container">
-//                 <div className="debt-item header-item">
-//                     <h2>Name</h2>
-//                     <h2>Amount</h2>
-//                     <h2>Due Date</h2>
-//                 </div>
-//                 {debts.map((debt) => (
-//                     <div key={debt.id} className="debt-item">
-//                         <h4>{debt?.name}</h4>
-//                         {/* need to fix the styling so 
-//                         that larger numbers don't get off center */}
-//                         <h4 className="amount">${debt?.amount}</h4>
-//                         <h4>{debt?.dueDate?.slice(0, 10)}</h4>
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     )
-// }
-
-
-
-
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getDebts, addDebt } from "../../managers/debtManager"; // Import addDebt function
