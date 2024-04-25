@@ -92,15 +92,6 @@ export const DebtList = ({ loggedInUser }) => {
     return (
         <div className="debt-list">
             <h1 className="header">Debts</h1>
-            <button onClick={() => setShowAddForm(true)}>Add Debt</button>
-            {showAddForm && (
-                <form onSubmit={handleAddDebt}>
-                    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-                    <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-                    <input type="date" placeholder="Due Date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
-                    <button type="submit">Submit</button>
-                </form>
-            )}
             <div className="debt-container">
                 <div className="debt-item header-item">
                     <h2>Name</h2>
@@ -115,6 +106,15 @@ export const DebtList = ({ loggedInUser }) => {
                     </div>
                 ))}
             </div>
+            <button className="add-btn" onClick={() => setShowAddForm(true)}>Add Debt</button>
+            {showAddForm && (
+                <form onSubmit={handleAddDebt}>
+                    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+                    <input type="number" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
+                    <input type="date" placeholder="Due Date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
+                    <button type="submit">Submit</button>
+                </form>
+            )}
         </div>
     )
 }
@@ -129,3 +129,6 @@ export const DebtList = ({ loggedInUser }) => {
 //? i needed to map through the 'debts' before i could access the debt properties
 
 //! i want to be able to create a new debt, without navigating to a new page. how can a user create a new debt in the container with input fields?
+
+
+//! i want to add animations over the property amounts

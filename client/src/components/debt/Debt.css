@@ -19,6 +19,13 @@
     align-items: center;
     border: solid black;
     border-radius: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: gray;
 }
 
 .header-item {
@@ -26,16 +33,39 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 10px;
+    /* color: black; */
 }
 
 .debt-item {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 10px;
 }
 
 .amount {
-    width: 100px; /* Adjust the width as needed */
-    text-align: right; /* Align the text to the right within the width */
+    width: 100px;
+    /* Adjust the width as needed */
+    text-align: right;
+    /* Align the text to the right within the width */
+}
+
+.add-btn {
+    border: solid black;
+    border-radius: 7px;
+    margin-top: 20px;
+    /* background-color: rgb(37, 78, 240);v*/
+    color: white;
+    background-color: rgba(238, 162, 20, 0.927);
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    border: solid black;
+    margin-top: 20px;
+    background-color: rgba(238, 162, 20, 0.927);
 }
